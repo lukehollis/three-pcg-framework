@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+*.tsbuildinfo
+*.log
+*.pid
+*.tgz
+verification-*.png
+.DS_Store
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
