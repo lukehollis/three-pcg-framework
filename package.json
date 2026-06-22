@@ -1,7 +1,7 @@
 {
   "name": "three-pcg-framework",
   "version": "0.1.0",
-  "description": "Clean-room Three.js implementation of Unreal-style PCG Biome Core pipeline primitives.",
+  "description": "Clean-room Three.js implementation of Unreal-style PCG framework primitives.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
