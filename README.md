@@ -1,15 +1,18 @@
 # three-pcg-framework
 
-`three-pcg-framework` is a clean-room TypeScript implementation of Unreal-style Procedural Content Generation framework primitives for Three.js runtimes. It is not only a biome package: it provides the reusable PCG data model and execution pieces needed to build graph-like procedural systems, including seeded point data, spatial masks and caches, surface and texture sampling, point filters, weighted selection, transforms, recursive spawning, self-pruning, priority/difference passes, runtime tiling, and instanced rendering helpers.
+`three-pcg-framework` is a clean-room TypeScript implementation of Unreal-style Procedural Content Generation framework primitives for Three.js runtimes. It is not only a biome package: it provides the reusable PCG data model and execution pieces needed to build graph-like procedural systems, including seeded point data, tagged data collections, graph execution, a UE-style node registry, spatial masks and caches, surface and texture sampling, point filters, weighted selection, transforms, recursive spawning, self-pruning, priority/difference passes, runtime tiling, and instanced rendering helpers.
 
 Biome Core compatibility is one supported workflow built on top of the framework. The biome helpers model the documented Unreal Biome Core flow with local biome caches, root asset tables, generator/subtype mapping, filter feedback passes, recursive child transforms, global priority difference, and camera-centered runtime tiles, but the underlying modules are intended to support broader PCG graphs as well.
 
 The package does not copy Unreal Engine source. It implements compatible behavior from public semantics and local behavioral study of native PCG concepts rather than porting Epic source code.
 
+The graph executor accepts node `type` values that match Unreal-style settings class names such as `PCGSurfaceSamplerSettings`, `PCGTransformPointsSettings`, `PCGSelfPruningSettings`, and `PCGStaticMeshSpawnerSettings`. These resolve through `defaultPCGNodeRegistry`, so imported or generated graph definitions can stay close to the original node vocabulary while running against Three.js data.
+
 ```ts
 import {
   SeededRandom,
   createVolumeCache,
+  runPCGGraph,
   runLocalBiomeCore,
   runGlobalBiomeCore,
   surfaceScatter

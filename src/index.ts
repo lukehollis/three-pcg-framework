@@ -132,6 +132,32 @@ export { RuntimeTileGenerator, RuntimeTileGrid } from "./runtime.js";
 export type { PCGRuntimeInfluence, PCGRuntimeLayer, PCGRuntimeTile } from "./runtime.js";
 export { createInstancedGroup as createPCGInstancedGroup } from "./instancing.js";
 export type { PCGInstancingSource } from "./instancing.js";
+export {
+  cloneInputs,
+  cloneTaggedData,
+  defaultPCGNodeRegistry,
+  emptyData,
+  getInputData,
+  getInputPoints,
+  paramData,
+  PCGNodeRegistry,
+  pointData,
+  runPCGGraph,
+  spatialData,
+  surfaceData
+} from "./graph.js";
+export type {
+  PCGDataKind,
+  PCGExecutableGraph,
+  PCGGraphEdge,
+  PCGGraphNode,
+  PCGNodeExecutionContext,
+  PCGNodeExecutor,
+  PCGNodeInputs,
+  PCGNodeOutputs,
+  PCGNodeSettings,
+  PCGTaggedData
+} from "./graph.js";
 export type {
   BiomeBounds,
   BiomeContext,
